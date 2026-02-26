@@ -10,7 +10,9 @@ depends=('libx11' 'libxinerama')
 install=dwm.install
 source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 	dwm.desktop
-	config.h)
+	config.h
+  gaplessgrid.c
+  centeredmaster.c)
 _patches=(01-pertag.diff
           02-awesomebar.diff
 	  03-dualstatus.diff)
@@ -26,6 +28,8 @@ build() {
   done
 
   cp $srcdir/config.h config.h
+  cp $srcdir/gaplessgrid.c gaplessgrid.c
+  cp $srcdir/centeredmaster.c centeredmaster.c
 
   sed -i 's/CPPFLAGS =/CPPFLAGS +=/g' config.mk
   sed -i 's/^CFLAGS = -g/#CFLAGS += -g/g' config.mk
@@ -44,7 +48,9 @@ package() {
 }
 md5sums=('c3bc22a236e5ba6fc713f3a1faa56509'
          '939f403a71b6e85261d09fc3412269ee'
-         '8d372d8175741b8b3c1bd1ec2b52988f'
+         '58d2bbbc4d6ee6f537867fdb6f5b74dc'
+         '907b5e290ac4bc41bd250837bf5343a9'
+         '2488057fd7a5875f4a7f2689dc02d4ab'
          'fe418b7cf2e01f59c05595a8336e6020'
          'dc5e132a90a3b9da947c26e68399ac39'
          '91d8bad2a088fac84b34d4960375d86a')
