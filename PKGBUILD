@@ -1,5 +1,5 @@
 pkgname=dwm
-pkgver=6.7
+pkgver=6.8
 pkgrel=2
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
@@ -46,7 +46,7 @@ package() {
   install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
   install -m644 -D $srcdir/dwm.desktop $pkgdir/usr/share/xsessions/dwm.desktop
 }
-md5sums=('c3bc22a236e5ba6fc713f3a1faa56509'
+md5sums=('fb14b10a28a4524627fbfa72c567b239'
          '939f403a71b6e85261d09fc3412269ee'
          '58d2bbbc4d6ee6f537867fdb6f5b74dc'
          '907b5e290ac4bc41bd250837bf5343a9'
