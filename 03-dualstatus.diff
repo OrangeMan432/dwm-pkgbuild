@@ -10,14 +10,6 @@ index 6497687..0ba4806 100644
  static const char *fonts[]          = { "monospace:size=10" };
  static const char dmenufont[]       = "monospace:size=10";
  static const char col_gray1[]       = "#222222";
-@@ -67,6 +68,7 @@ static const Key keys[] = {
- 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
- 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
- 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-+	{ MODKEY,                       XK_b,      toggleextrabar, {0} },
- 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
- 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
- 	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
 diff --git a/dwm.c b/dwm.c
 index 5868dcc..357365b 100644
 --- a/dwm.c
