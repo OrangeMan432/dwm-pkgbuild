@@ -16,7 +16,8 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 _patches=(01-pertag.diff
           02-awesomebar.diff
 	  03-dualstatus.diff
-	  04-preserveonrestart.diff)
+	  04-preserveonrestart.diff
+	  05-fixborders.diff)
 source=(${source[@]} ${_patches[@]})
 
 build() {
@@ -55,4 +56,5 @@ md5sums=('fb14b10a28a4524627fbfa72c567b239'
          'fe418b7cf2e01f59c05595a8336e6020'
          '46a7ab6a2914d16a0e3cdaee3f605357'
          'a702c720602208bcb22637daf20fe729'
-         'fcd79a3e7270817e152dcd305481c558')
+         'fcd79a3e7270817e152dcd305481c558'
+         'abb765b73c0bcc162129d4d0b92083b2')
