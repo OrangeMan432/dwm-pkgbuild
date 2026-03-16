@@ -20,7 +20,8 @@ _patches=(01-pertag.diff
 	  03-dualstatus.diff
 	  04-preserveonrestart.diff
 	  05-fixborders.diff
-	  06-uselessgaps.diff)
+	  06-uselessgaps.diff
+	  07-doubleborders.diff)
 source=(${source[@]} ${_patches[@]})
 
 build() {
@@ -57,7 +58,7 @@ md5sums=('fb14b10a28a4524627fbfa72c567b239'
          '9977d496b38fec05311ac216b0a0f821'
          '8012b0b7aec15d67ceeff74570f8acea'
          '4d93a89c9a8945405a923a37bf060eba'
-         '5fecc9ef96dfbef32a32085b4bf18e5e'
+         '303a8c4f9f739304004385aa04615339'
          '907b5e290ac4bc41bd250837bf5343a9'
          '2488057fd7a5875f4a7f2689dc02d4ab'
          'fe418b7cf2e01f59c05595a8336e6020'
@@ -65,4 +66,5 @@ md5sums=('fb14b10a28a4524627fbfa72c567b239'
          'a702c720602208bcb22637daf20fe729'
          'fcd79a3e7270817e152dcd305481c558'
          'abb765b73c0bcc162129d4d0b92083b2'
-         'ac1e8f7878aa3b817aae40cc31f6a4df')
+         'ac1e8f7878aa3b817aae40cc31f6a4df'
+         '474a797d90adf251a42fdffe3c94105c')

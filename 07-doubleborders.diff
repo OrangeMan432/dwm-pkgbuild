@@ -1,0 +1,77 @@
+diff --git a/dwm.c b/dwm.c
+index ab3a84c..6382255 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -378,6 +378,21 @@ applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
+ 	return *x != c->x || *y != c->y || *w != c->w || *h != c->h;
+ }
+ 
++void
++updateborder(Client *c, int focused)
++{
++	if (!c || c->bw == 0)
++		return;
++
++	char cmd[128];
++	const char *inner = focused ? colors[SchemeSel][ColBorder] + 1 : colors[SchemeNorm][ColBorder] + 1;
++	const char *outer = colors[SchemeNorm][ColBg] + 1;
++
++	snprintf(cmd, sizeof(cmd), "chwb2 -I '%s' -O '%s' -i 2 -o 4 0x%lx &",
++	         inner, outer, c->win);
++	system(cmd);
++}
++
+ void
+ arrange(Monitor *m)
+ {
+@@ -390,6 +405,11 @@ arrange(Monitor *m)
+ 		restack(m);
+ 	} else for (m = mons; m; m = m->next)
+ 		arrangemon(m);
++
++	Client *c;
++	for (c = m->clients; c; c = c->next) {
++		updateborder(c, c == m->sel);
++	}
+ }
+ 
+ void
+@@ -801,6 +821,7 @@ focus(Client *c)
+ 		attachstack(c);
+ 		grabbuttons(c, 1);
+ 		XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
++		updateborder(c, 1);
+ 		setfocus(c);
+ 	} else {
+ 		XSetInputFocus(dpy, root, RevertToPointerRoot, CurrentTime);
+@@ -808,6 +829,12 @@ focus(Client *c)
+ 	}
+ 	selmon->sel = c;
+ 	drawbars();
++
++	if (selmon->sel)
++		updateborder(selmon->sel, 1);
++
++	if (c && c != selmon->sel)
++		updateborder(c, 0);
+ }
+ 
+ /* there are some broken focus acquiring clients needing extra handling */
+@@ -1085,6 +1112,7 @@ manage(Window w, XWindowAttributes *wa)
+ 	c->mon->sel = c;
+ 	arrange(c->mon);
+ 	XMapWindow(dpy, c->win);
++	updateborder(c, 0);
+ 	focus(NULL);
+ }
+ 
+@@ -1799,6 +1827,9 @@ unmanage(Client *c, int destroyed)
+ 	focus(NULL);
+ 	updateclientlist();
+ 	arrange(m);
++
++	if (selmon->sel)
++		updateborder(selmon->sel, 1);
+ }
+ 
+ void
