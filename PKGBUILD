@@ -13,6 +13,7 @@ source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 	start-dwm
 	wallpaper.jpg
 	config.h
+	colors.h
   gaplessgrid.c
   centeredmaster.c)
 _patches=(01-pertag.diff
@@ -34,6 +35,7 @@ build() {
   done
 
   cp $srcdir/config.h config.h
+  cp $srcdir/colors.h colors.h
   cp $srcdir/gaplessgrid.c gaplessgrid.c
   cp $srcdir/centeredmaster.c centeredmaster.c
 
@@ -58,7 +60,8 @@ md5sums=('fb14b10a28a4524627fbfa72c567b239'
          '9977d496b38fec05311ac216b0a0f821'
          '8012b0b7aec15d67ceeff74570f8acea'
          '4d93a89c9a8945405a923a37bf060eba'
-         '303a8c4f9f739304004385aa04615339'
+         '72c61f602143e4e7f4732c732913fb09'
+         'd1ef537c3906e40ee1f489d6f69f7d64'
          '907b5e290ac4bc41bd250837bf5343a9'
          '2488057fd7a5875f4a7f2689dc02d4ab'
          'fe418b7cf2e01f59c05595a8336e6020'

@@ -2,18 +2,15 @@
 
 /* appearance */
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int extrabar           = 1;        /* 0 means no extra bar */
 static const char *fonts[]          = { "JetBrainsMonoNerdFont-Regular:size=10" };
 static const char dmenufont[]       = "JetBrainsMonoNerdFont-Regular:size=10";
-static const char col_gray1[]       = "#1d2021";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#ebdbb2";
-static const char col_gray4[]       = "#fbf1c7";
-static const char col_cyan[]        = "#689d6a";
+
+#include "colors.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
