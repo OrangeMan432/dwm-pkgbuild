@@ -4,4 +4,6 @@ dunst &
 xclickroot -r bash /home/orangeman/xmenu.sh &
 unclutter --timeout 1 &
 feh --bg-scale /usr/share/dwm/wallpaper.jpg
-exec dwm
+while true; do
+	dwm 2> ~/.dwm.log
+done
