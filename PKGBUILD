@@ -1,6 +1,6 @@
 pkgname=dwm
 pkgver=6.8
-pkgrel=2
+pkgrel=3
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('i686' 'x86_64' 'aarch64')
@@ -58,9 +58,9 @@ package() {
 }
 md5sums=('fb14b10a28a4524627fbfa72c567b239'
          '9977d496b38fec05311ac216b0a0f821'
-         '9cfb13c19346432dc2fec0e1fd224a8b'
+         '11f88e3f6f275d5a51fc67db22cbadfb'
          '4d93a89c9a8945405a923a37bf060eba'
-         '7079afd3f147849ba3e6efa904325c21'
+         '33420dc280c816e5ca332b0906a2eda9'
          '2d02f178f2f132d198e51cdaaf4e9b0e'
          '907b5e290ac4bc41bd250837bf5343a9'
          '2488057fd7a5875f4a7f2689dc02d4ab'
