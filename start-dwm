@@ -3,6 +3,7 @@ picom &
 dunst &
 xclickroot -r bash /home/orangeman/xmenu.sh &
 /home/orangeman/statusbar.sh &
+wmname LG3D
 unclutter --timeout 1 &
 feh --bg-scale /usr/share/dwm/wallpaper.jpg
 while true; do
