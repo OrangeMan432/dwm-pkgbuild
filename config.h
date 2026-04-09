@@ -7,8 +7,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int extrabar           = 1;        /* 0 means no extra bar */
-static const char *fonts[]          = { "JetBrainsMonoNerdFont-Regular:size=10" };
-static const char dmenufont[]       = "JetBrainsMonoNerdFont-Regular:size=10";
+static const char *fonts[]          = { "Terminus:size=10"};
+static const char dmenufont[]       = "Terminus:size=10";
 
 #include "colors.h"
 static const char *colors[][3]      = {
@@ -110,7 +110,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,                       XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("echo 'vxwm' > /tmp/wm-switch && notify-send 'switching to vxwm...'") },
 };
 
 /* button definitions */
