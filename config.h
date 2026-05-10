@@ -101,6 +101,10 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("pamixer -t; pkill -P $(cat /tmp/statusbar.pid) sleep") },
 	{ 0, XF86XK_AudioRaiseVolume,              spawn,          SHCMD("pamixer -i 5; pkill -P $(cat /tmp/statusbar.pid) sleep") },
 	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("pamixer -d 5; pkill -P $(cat /tmp/statusbar.pid) sleep") },
+	{ 0, XF86XK_AudioPlay,                     spawn,          SHCMD("playerctl play-pause") },
+	{ 0, XF86XK_AudioPrev,                     spawn,          SHCMD("playerctl previous") },
+	{ 0, XF86XK_AudioNext,                     spawn,          SHCMD("playerctl next") },
+	{ 0, XF86XK_AudioStop,                     spawn,          SHCMD("playerctl stop") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
