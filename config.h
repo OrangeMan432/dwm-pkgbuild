@@ -15,8 +15,8 @@ static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
 #include "colors.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_bg2,   col_bg2  },
+	[SchemeNorm] = { col_fg1,   col_gray1, col_gray2 },
+	[SchemeSel]  = { col_fg1,   col_bg2,   col_bg2  },
 };
 
 /* tagging */
@@ -33,7 +33,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_bg2, "-sf", col_gray4, "-p", ">", "-c", "-bw", "2", "-vi", "-l", "10", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_fg1, "-sb", col_bg2, "-sf", col_fg1, "-p", ">", "-c", "-bw", "2", "-vi", "-l", "10", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenshotcmd[]  = { "/home/orangeman/scripts/screenshot", NULL };
 static const char *lockcmd[]  = { "slock", NULL };

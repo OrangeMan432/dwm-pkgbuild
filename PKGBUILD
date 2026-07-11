@@ -11,7 +11,7 @@ install=dwm.install
 source=(http://dl.suckless.org/dwm/dwm-$pkgver.tar.gz
 	dwm.desktop
 	start-dwm
-	wallpaper.jpg
+	wallpaper.png
 	config.h
 	colors.h
   gaplessgrid.c
@@ -22,7 +22,6 @@ _patches=(01-pertag.diff
 	  04-preserveonrestart.diff
 	  05-fixborders.diff
 	  06-uselessgaps.diff)
-	  #07-doubleborders.diff)
 source=(${source[@]} ${_patches[@]})
 
 build() {
@@ -54,14 +53,14 @@ package() {
   install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
   install -m644 -D $srcdir/dwm.desktop $pkgdir/usr/share/xsessions/dwm.desktop
   install -m655 -D $srcdir/start-dwm $pkgdir/usr/bin/start-dwm
-  install -m655 -D $srcdir/wallpaper.jpg $pkgdir/usr/share/dwm/wallpaper.jpg
+  install -m655 -D $srcdir/wallpaper.png $pkgdir/usr/share/dwm/wallpaper.png
 }
 md5sums=('fb14b10a28a4524627fbfa72c567b239'
          '9977d496b38fec05311ac216b0a0f821'
-         'bfaf44bd3c9881002f8d9cf9b10064f3'
-         '4d93a89c9a8945405a923a37bf060eba'
-         'f130ec79e047e45553697bacf17c9267'
-         '46349025f96ff0af2c709d9999ecb162'
+         '980890d24693a073a4dabb997c3ca76f'
+         '8525993c4300962ff65cdcac4500bbcd'
+         'f6acc09a563119dcdff6c852a56358b5'
+         '7827eb20e11351f5708726a3c76b8855'
          '907b5e290ac4bc41bd250837bf5343a9'
          '2488057fd7a5875f4a7f2689dc02d4ab'
          'fe418b7cf2e01f59c05595a8336e6020'
@@ -69,4 +68,4 @@ md5sums=('fb14b10a28a4524627fbfa72c567b239'
          'a702c720602208bcb22637daf20fe729'
          'fcd79a3e7270817e152dcd305481c558'
          'abb765b73c0bcc162129d4d0b92083b2'
-         '2e99eb2ebf0542eb445fc781bac11319')
+         '10b73a8adbd9a3b486984c1136990bc7')

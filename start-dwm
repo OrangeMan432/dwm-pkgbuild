@@ -1,11 +1,10 @@
 #!/bin/sh
-picom &
 dunst &
 xclickroot -r bash /home/orangeman/scripts/xmenu.sh &
 /home/orangeman/scripts/statusbar.sh &
 wmname LG3D
 unclutter --timeout 1 &
-feh --bg-scale /usr/share/dwm/wallpaper.jpg
+feh --bg-scale /usr/share/dwm/wallpaper.png
 
 WM_SWITCH="/tmp/wm-switch"
 
