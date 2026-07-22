@@ -6,21 +6,6 @@ wmname LG3D
 unclutter --timeout 1 &
 feh --bg-scale /usr/share/dwm/wallpaper.png
 
-WM_SWITCH="/tmp/wm-switch"
-
-if [ ! -f "$WM_SWITCH" ]; then
-    echo "dwm" > "$WM_SWITCH"
-fi
-
 while true; do
-    CURRENT_WM=$(cat "$WM_SWITCH")
-
-    case $CURRENT_WM in
-        "vxwm")
-            vxwm 2> ~/.vxwm.log
-            ;;
-        "dwm"|*)
-            dwm 2> ~/.dwm.log
-            ;;
-    esac
+    dwm 2> ~/.dwm.log
 done
