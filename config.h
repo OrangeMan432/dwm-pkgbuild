@@ -74,6 +74,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ 0,                            XF86XK_Launch1,spawn,      {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+	{ MODKEY,                       XK_y,      spawn,          SHCMD("/home/orangeman/scripts/dwm-tabs attach") },
+	{ MODKEY|ShiftMask,             XK_y,      spawn,          SHCMD("/home/orangeman/scripts/dwm-tabs detach") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,      toggleextrabar, {0} },
 	{ MODKEY,                       XK_j,      focusstack,  {.i = +1 } },
