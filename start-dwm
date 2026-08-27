@@ -4,8 +4,12 @@ xclickroot -r bash /home/orangeman/scripts/xmenu.sh &
 /home/orangeman/scripts/statusbar.sh &
 wmname LG3D
 unclutter --timeout 1 &
-mpd-mpris --host 127.0.0.1 --port 6600 &
 feh --bg-scale /usr/share/dwm/wallpaper.png
+
+pipewire &
+pipewire-pulse &
+wireplumber &
+mpd-mpris --host 127.0.0.1 --port 6600 &
 
 while true; do
     dwm 2> ~/.dwm.log
