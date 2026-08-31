@@ -1,4 +1,5 @@
 #!/bin/sh
+picom &
 dunst &
 xclickroot -r bash /home/orangeman/scripts/xmenu.sh &
 /home/orangeman/scripts/statusbar.sh &
