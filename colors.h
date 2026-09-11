@@ -11,14 +11,14 @@ static const char col_bg2[]         = "#504945";
 */
 
 // gruvbox material
-static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#32302f";
+static const char col_gray1[]       = "#111111"; //"#282828";
+static const char col_gray2[]       = "#161616"; //"#32302f";
 static const char col_gray3[]       = "#ddc7a1";
 static const char col_gray4[]       = "#d4be98";
 static const char col_cyan[]        = "#7daea3";
 
-static const char col_bg1[]         = "#32302f";
-static const char col_bg2[]         = "#45403d"; // this is col3 from material
+static const char col_bg1[]         = "#161616"; //"#32302f";
+static const char col_bg2[]         = "#282828"; //"#45403d"; // this is col3 from material
 
 static const char col_fg1[]         = "#ddc7a1";
 
