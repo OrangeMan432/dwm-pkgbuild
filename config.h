@@ -59,11 +59,15 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+/* dmenu colorscheme shared with ~/scripts: keybinds pass it as argv
+ * (-nb/-nf/-sb/-sf/-fn) so scripts stay in sync with colors.h */
+#define DMENU_THEME "-nb", col_gray1, "-nf", col_fg1, "-sb", col_bg2, "-sf", col_fg1, "-fn", dmenufont
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_fg1, "-sb", col_bg2, "-sf", col_fg1, "-p", ">", "-c", "-bw", "2", "-vi", "-l", "10", NULL };
+static const char *dmenucmd[] = { "dmenu_run", DMENU_THEME, "-p", ">", "-c", "-bw", "2", "-vi", "-l", "10", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *screenshotcmd[]  = { "/home/orangeman/scripts/screenshot", NULL };
+static const char *scriptmenucmd[]  = { "/usr/bin/scriptmenu.sh", DMENU_THEME, NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 
 #include <X11/XF86keysym.h>
@@ -72,10 +76,10 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ 0,                            XF86XK_Launch1,spawn,      {.v = screenshotcmd } },
+	{ 0,                            XF86XK_Launch1,spawn,      {.v = scriptmenucmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY,                       XK_y,      spawn,          SHCMD("/home/orangeman/scripts/dwm-tabs attach") },
-	{ MODKEY|ShiftMask,             XK_y,      spawn,          SHCMD("/home/orangeman/scripts/dwm-tabs detach") },
+	{ MODKEY,                       XK_y,      spawn,          SHCMD("/usr/bin/dwm-tabs.sh attach") },
+	{ MODKEY|ShiftMask,             XK_y,      spawn,          SHCMD("/usr/bin/dwm-tabs.sh detach") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,      toggleextrabar, {0} },
 	{ MODKEY,                       XK_j,      focusstack,  {.i = +1 } },
